@@ -13,26 +13,29 @@
             <form class="formulario-login" id="login">
                 <div>
                     <p>Nombre completo:</p>
-                    <input type="text" id="nombre" onchange="">
+                    <input type="text" id="nombre" onchange="validarNombre()" autocomplete="off">
+                    <p id="pNombre" class="rojo"></p>
                 </div>
                 <div>
                     <p>Email:</p>
-                    <input type="email" id="mail">
+                    <input type="email" id="mail" onchange="validarMail()" autocomplete="off">
+                    <p class="rojo" id="pMail"></p>
                 </div>
                 <div>
                     <p>Contraseña:</p>
-                    <input type="password" id="contra" onchange="validacionContra()">
+                    <input type="password" id="contra" autocomplete="off">
                     <div>
                         <p class="rojo" id="pCaracteres">✘ Mínimo 8 caracteres</p>
                         <p class="rojo" id="pNumero">✘ Al menos un número</p>
-                        <p class="rojo" id="pLetra">✘ Una letra</p>
+                        <p class="rojo" id="pLetra">✘ Al menos una letra</p>
                     </div>
                 </div>
                 <div>
                     <p>Confirmar contraseña:</p>
-                    <input type="password" id="confcontra">
+                    <input type="password" id="confContra" onchange="validarConfContra()" autocomplete="off">
+                    <p id="pConfContra" class="rojo"></p>
                 </div>
-                <input type="submit" id="envForm">
+                <input type="submit" id="envForm" class="btn-login" value="Iniciar sesión">
             </form>
         </div>
     </section>
