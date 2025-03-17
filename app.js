@@ -92,8 +92,25 @@ const validarMail=()=>{
         pMail.innerText='Debes ingresar un email valido.';
         mail.style.border="2px solid rgb(133, 6, 6)";
     }
+}  
+const validarDatosCorrectos=()=>{
+    nombre=document.getElementById('nombre');
+    mail=document.getElementById('mail');
+    contra=document.getElementById('contra');
+    confirmarContra=document.getElementById('confContra');
+    return nombre.value.length>3&&esEmailValido(mail.value)&&esValidaContra(contra.value)&&contra.value==confirmarContra.value;
 }
 
 contra.addEventListener('input', ()=>{
     validacionContra();
+});
+
+submit.addEventListener('click',()=>{
+    preventDefault();
+    let textolog=document.getElementById("confirmacionLogueo");
+    if(validarDatosCorrectos()){
+        textolog.innerText="Te has logueado exitosamente.";
+    }else{
+        textolog.innerText="No has ingresado los datos correctamente.";
+    }
 });
