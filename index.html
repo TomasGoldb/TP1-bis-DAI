@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>TP1 DAI</title>
+</head>
+<body>
+    <section class="section-login">
+        <div class="div-login">
+            <h1>Logueo</h1>
+            <form class="formulario-login" id="login">
+                <div>
+                    <p>Nombre completo:</p>
+                    <input type="text" id="nombre" onchange="">
+                </div>
+                <div>
+                    <p>Email:</p>
+                    <input type="email" id="mail">
+                </div>
+                <div>
+                    <p>Contraseña:</p>
+                    <input type="password" id="contra" onchange="validacionContra()">
+                    <div>
+                        <p class="rojo" id="pCaracteres">✘ Mínimo 8 caracteres</p>
+                        <p class="rojo" id="pNumero">✘ Al menos un número</p>
+                        <p class="rojo" id="pLetra">✘ Una letra</p>
+                    </div>
+                </div>
+                <div>
+                    <p>Confirmar contraseña:</p>
+                    <input type="password" id="confcontra">
+                </div>
+                <input type="submit" id="envForm">
+            </form>
+        </div>
+    </section>
+
+
+    <script src="app.js"></script>
+</body>
+</html>
