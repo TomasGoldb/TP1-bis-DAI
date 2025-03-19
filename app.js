@@ -106,11 +106,30 @@ contra.addEventListener('input', ()=>{
 });
 
 submit.addEventListener('click',()=>{
-    preventDefault();
+    event.preventDefault()
     let textolog=document.getElementById("confirmacionLogueo");
+    console.log(validarDatosCorrectos());
     if(validarDatosCorrectos()){
-        textolog.innerText="Te has logueado exitosamente.";
+        let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+        console.log(usuarios);
+        const cuentaAGuardar= {
+            nombre: nombre.value,
+            mail: mail.value,
+            contra: contra.value
+        };
+        usuarios.push(cuentaAGuardar);
+        console.log(usuarios);
+        localStorage.setItem('usuarios', JSON.stringify(usuarios));
+        Swal.fire({
+            title: "Tu cuenta se ha creado correctamente!",
+            icon: "success",
+            draggable: true
+          });
     }else{
-        textolog.innerText="No has ingresado los datos correctamente.";
+        Swal.fire({
+            title: "Hay un error en tu registro!",
+            icon: "error",
+            draggable: true
+          });
     }
 });
