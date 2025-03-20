@@ -8,6 +8,7 @@ let submit=document.getElementById('envForm');
 let numero=document.getElementById('pNumero');
 let caracteres=document.getElementById('pCaracteres');
 let letra=document.getElementById('pLetra');
+let mostrarContra=document.getElementById("mostrarContra");
 
 function contieneNumero(str) {
     for (let i = 0; i < str.length; i++) {
@@ -131,5 +132,13 @@ submit.addEventListener('click',()=>{
             icon: "error",
             draggable: true
           });
+    }
+});
+
+mostrarContra.addEventListener('click',()=>{
+    if(contra.type=="text"){
+        contra.type="password";
+    } else{
+        contra.type="text";
     }
 });

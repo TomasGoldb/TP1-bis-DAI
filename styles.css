@@ -74,6 +74,14 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
     transform: scale(1.04);
     cursor: pointer;
 }
+.mostrar-contrasena{
+    margin-top: 0.7%;
+}
+.mostrar-contrasena input{
+    width: 5% !important;
+}
+
+
 
 
 .rojo{
